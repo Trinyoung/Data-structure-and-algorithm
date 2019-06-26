@@ -22,35 +22,71 @@ var fullJustify = function (words, maxWidth) {
     }
     return row;
   }
+  const _generateLast = (row, resItem, result) => {
+    for (let j = 0; j < row.length - 1; j++) {
+      resItem += (row[j] + " ");
+    }
+    resItem += row[row.length - 1];
+    
+    const dis = maxWidth - resItem.length;
+    if (resItem.length < maxWidth) {
+      for (let i = 0; i < dis; i++) {
+        resItem += " "
+      }
+    }
+    result.push(resItem);
+  }
   for (let i = 0; i < words.length; i++) {
     const item = words[i];
-    if (item.length <= maxWidth && length < maxWidth) {
-      length += item.length
-      if (length + 1 < maxWidth) {
-        length = length + 1;
+    length += item.length;
+    if (length + 1 <= maxWidth) {
+      length = length + 1;
+    }
+    if (length >= maxWidth) {
+      if (length > maxWidth) {
+        i--;
+      } else {
+        row.push(item);
+        realLen += item.length;
       }
-      if (length >= maxWidth) {
-        let resItem = '';
+      let resItem = '';
+      if (i < words.length - 1) {
         const dis = maxWidth - realLen;
-        const fillNum = Math.floor(dis / (row.length - 1));
-        const extraNum = dis % (row.length - 1);
-        for (let j = 0; j < row.length - 1; j++) {
-          if (extraNum > 0) {
-            extraNum--;
-            resItem += _fill(row[j], fillNum + 1);
-          } else {
-            resItem += _fill(row[j], fillNum);
+        let fillNum = row.length - 1 > 0 ? Math.floor(dis / (row.length - 1)) : dis;
+
+        if (row.length - 1 > 0) {
+          let extraNum = dis % (row.length - 1);
+          for (let j = 0; j < row.length - 1; j++) {
+            if (extraNum > 0) {
+              extraNum--;
+              resItem += _fill(row[j], fillNum + 1);
+            } else {
+              resItem += _fill(row[j], fillNum);
+            }
           }
+          resItem += row[row.length - 1]
+        } else {
+          resItem = _fill(row[0], fillNum);
         }
-        resItem += row[row.length - 1]
         result.push(resItem);
         row = [];
         realLen = 0;
         length = 0;
       } else {
-        row.push(item);
+        _generateLast(row, resItem, result);
+      }
+    } else {
+      row.push(item);
+      if (i < words.length - 1) {
         realLen += item.length;
+      } else {
+        let resItem = "";
+        _generateLast(row, resItem, result);
       }
     }
   }
+  return result;
 };
+console.log(fullJustify(["What", "must", "be", "acknowledgment", "shall", "be"], 16));
+console.log(fullJustify(["This", "is", "an", "example", "of", "text", "justification."],
+16))
