@@ -36,8 +36,5 @@ var isInterleave = function (s1, s2, s3) {
   }
   return result;
 };
-// "aa"
-// "ab"
-// "aaba"
 s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
 console.log(isInterleave(s1, s2, s3))

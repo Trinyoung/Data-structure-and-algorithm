@@ -22,6 +22,12 @@
       "request": "launch",
       "name": "Launch lengthOfLongestSubstring",
       "program": "${workspaceFolder}/lengthOfLongestSubstring.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch isInterleave",
+      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo2.js"
     }
   ]
 }
