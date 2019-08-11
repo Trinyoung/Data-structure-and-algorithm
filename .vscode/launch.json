@@ -27,7 +27,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch isInterleave",
-      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo2.js"
+      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo4.js"
     }
   ]
 }
