@@ -3,8 +3,7 @@ var isInterleave = function (s1, s2, s3) {
   let num1 = 0;
   let num2 = 0;
   let turn = 1;
-  let result = true;
-  if(s3.length < s1.length+ s2.length) {
+  if (s3.length !== s1.length + s2.length) {
     return false;
   }
   for (let i = 0; i < s3.length; i++) {
@@ -16,8 +15,7 @@ var isInterleave = function (s1, s2, s3) {
           num2++;
           turn = 2;
         } else {
-          result = false;
-          return result;
+          return false;
         }
       }
     } else {
@@ -28,13 +26,12 @@ var isInterleave = function (s1, s2, s3) {
           num1++;
           turn = 1;
         } else {
-          result = false;
-          return result;
+          return false;
         }
       }
     }
   }
-  return result;
+  return true;
 };
 s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
 console.log(isInterleave(s1, s2, s3))
