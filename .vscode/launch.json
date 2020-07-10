@@ -28,6 +28,12 @@
       "request": "launch",
       "name": "Launch isInterleave",
       "program": "${workspaceFolder}/algorithm\\isInterleave\\demo3.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch binarySearchTree",
+      "program": "${workspaceFolder}/binarySearchTree\\demo1.js"
     }
   ]
 }
