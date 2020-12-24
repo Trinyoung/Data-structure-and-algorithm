@@ -21,9 +21,9 @@ var isInterleave = function (s1, s2, s3) {
           num2 = num2 - offset + num3;
         }
 
-        if(a === c){
+        if (a === c) {
           num2++;
-          num1 = num1 -offset + num3;
+          num1 = num1 - offset + num3;
         }
       }
     }
@@ -37,13 +37,13 @@ var isInterleave = function (s1, s2, s3) {
       if (offset === 0) {
         return false;
       } else {
-        if(offstr[0] === a){
+        if (offstr[0] === a) {
           num3++;
         } else {
           return false;
         }
-        if (offstr){
-          
+        if (offstr) {
+
         }
       }
     }
@@ -70,12 +70,24 @@ var isInterleave = function (s1, s2, s3) {
   }
   return true;
 };
-// s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc";
-s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac";
 
-s1 = "aacbdaf", s2 = "abcbde", s3 = "aabacbdcf";
-// s1 = "aa", s2 = "ab", s3 = "aaba"
-console.log(isInterleave(s1, s2, s3));
-// `abcdeabcdef`
-// `abcdeabcdeg`
-// `abcdeabcdeb`
+s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac";
+s1 = {
+  'a': [0, 1],
+  'b': [2],
+  'c': [3, 4]
+};
+
+s2 = {
+  'd': [0],
+  'b': [1, 2],
+  'c': [3],
+  'a': [4]
+};
+
+s3 = {
+  'a': [0, 1, 8],
+  'd': [2],
+  'b': [3, 4, 6],
+  'c': [5, 9]
+};
