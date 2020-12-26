@@ -20,7 +20,7 @@ function quick (array, left, right){
   }
 }
 
-function partition (){
+function partition (array, left, right){
   var pivot = array[Math.floor((right + left)/2)],
     i = left,
     j = right;
