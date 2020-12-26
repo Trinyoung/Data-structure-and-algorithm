@@ -16,4 +16,4 @@ function arrMin(arr) {
     });
     return min;
 }
-console.log(arrMin([1,2,4, 3]));
+console.log(arrMin([1, 4, 3,2]));
