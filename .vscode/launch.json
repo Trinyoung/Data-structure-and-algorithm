@@ -27,7 +27,13 @@
       "type": "node",
       "request": "launch",
       "name": "Launch isInterleave",
-      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo3.js"
+      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo7.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch matrix",
+      "program": "${workspaceFolder}/algorithm\\matrix.js"
     }
   ]
 }
