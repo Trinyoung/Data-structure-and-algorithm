@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-07 11:51:23
- * @LastEditTime: 2021-01-07 12:17:02
+ * @LastEditTime: 2021-01-07 16:49:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\combinationSum\demo1.js
@@ -16,7 +16,7 @@
 // 解集不能包含重复的组合。 
 var combinationSum = function (candidates, target) {
     const result = [];
-    candidates = candidates.sort((a, b) => a - b);
+    // candidates = candidates.sort((a, b) => a - b);
     function _combinationSum(baseArray, target, index) {
         for (let i = index; i < candidates.length; i++) {
             const item = candidates[i];
@@ -34,6 +34,6 @@ var combinationSum = function (candidates, target) {
     _combinationSum([], target, 0);
     return result;
 };
-const candidates = [2, 3, 6, 7], target = 7;
+const candidates = [2, 1, 3, 6, 7, 4 , 5], target = 7;
 console.log(combinationSum(candidates, target));
 [2, 2, 3]
