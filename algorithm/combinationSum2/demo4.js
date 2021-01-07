@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-07 10:50:28
- * @LastEditTime: 2021-01-07 11:49:35
+ * @LastEditTime: 2021-01-07 12:08:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\combinationSum2\demo4.js
@@ -17,6 +17,7 @@ var combinationSum2 = function (candidates, target) {
                 let newBaseArr = [...baseArray, item];
                 if (target === item) {
                     result.push(newBaseArr);
+                    continue;
                 }
                 _combinationSum2(i + 1, target - item, newBaseArr);
             }
