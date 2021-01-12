@@ -40,6 +40,12 @@
       "request": "launch",
       "name": "Launch combinationSum2",
       "program": "${workspaceFolder}/algorithm\\combinationSum2\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch longestPalindrome",
+      "program": "${workspaceFolder}/algorithm\\longestPalindrome\\demo3.js"
     }
   ]
 }
