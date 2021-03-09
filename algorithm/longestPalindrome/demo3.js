@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-08 13:19:37
- * @LastEditTime: 2021-01-08 15:11:57
+ * @LastEditTime: 2021-01-12 15:21:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\longestPalindrome\demo3.js
@@ -12,7 +12,6 @@ var longestPalindrome = function (s) {
     let maxArr = [0, 1];
     let a = 0;
     function _getlongPalindrome(left, right) {
-        // console.log(++a);
         if (right - left > max) {
             const matrix = Math.ceil((left + right)/2);
             let leftStr = s.substring(left, matrix);

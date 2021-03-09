@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-08 13:00:50
- * @LastEditTime: 2021-01-08 17:01:36
+ * @LastEditTime: 2021-01-12 18:38:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\longestPalindrome\demo2.js
@@ -26,34 +26,26 @@ var longestPalindrome = function (s) {
     let maxArr = [];
     for (let key in palindromeItems) {
         const item = palindromeItems[key];
-        const left = item[0], right = item[item.length - 1];
-        // for (let i = 0; i < item.length; i++) {
-        //     if (right - left > max) {
-        //         const matrix = Math.ceil((left + right) / 2);
-        //         let leftStr = s.substring(left, matrix);
-        //         let rightStr = s.substring(matrix, right + 1);
-        //         if (leftStr === rightStr.split("").reverse().join("")) {
-        //             max = right - left;
-        //             maxArr = [left, right + 1];
-        //         } else {
-        //             _getlongPalindrome(left + 1, right);
-        //             _getlongPalindrome(left, right - 1);
-        //         }
-        //     }
-        // }
+        _getlongPalindrome(0, item.length-1, item);
     }
     function _getlongPalindrome(left, right, palindromeItems) {
-        if (right - left > max) {
-            const matrix = Math.ceil((left + right) / 2);
-            let leftStr = s.substring(left, matrix);
-            let rightStr = s.substring(matrix, right + 1);
+        if (palindromeItems[right] - palindromeItems[left] > max) {
+            const matrix = Math.ceil((palindromeItems[left] + palindromeItems[right]) / 2);
+            let leftStr = s.substring(palindromeItems[left], matrix);
+            let rightStr = s.substring(matrix, palindromeItems[right] + 1);
             if (leftStr === rightStr.split("").reverse().join("")) {
-                max = right - left;
-                maxArr = [left, right + 1];
+                max = palindromeItems[right] - palindromeItems[left];
+                maxArr = [palindromeItems[left], palindromeItems[right] + 1];
             } else {
-                _getlongPalindrome(left + 1, right);
-                _getlongPalindrome(left, right - 1);
+                _getlongPalindrome(left + 1, right, palindromeItems);
+                _getlongPalindrome(left, right - 1, palindromeItems);
             }
         }
     }
+    return s.substring(...maxArr);
 }
+console.time('reverse');
+// const a = 'civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth'
+// const a = 'abcddcbeaafsfasdfasasdfasdfasdfasdfasdfasdfasd';
+console.log(longestPalindrome(a))
+console.timeEnd('reverse');

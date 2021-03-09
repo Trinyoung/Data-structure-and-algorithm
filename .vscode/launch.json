@@ -45,7 +45,13 @@
       "type": "node",
       "request": "launch",
       "name": "Launch longestPalindrome",
-      "program": "${workspaceFolder}/algorithm\\longestPalindrome\\demo3.js"
+      "program": "${workspaceFolder}/algorithm\\longestPalindrome\\demo2.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch divide",
+      "program": "${workspaceFolder}/algorithm\\divide\\demo1.js"
     }
   ]
 }
