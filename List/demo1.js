@@ -77,11 +77,11 @@ class Node {
     this.next = undefined;
   }
 }
-
+module.exports = {LinkedList};
 let list = new LinkedList();
 list.append(1);
 list.append(2);
 list.append(4);
 list.insert(3, 1);
 // console.log(list.getElementAt(2));
-console.log(JSON.stringify(list), '------------->');
+// console.log(JSON.stringify(list), '------------->');
