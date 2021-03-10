@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-09 15:11:02
- * @LastEditTime: 2021-03-09 17:32:42
+ * @LastEditTime: 2021-03-10 16:10:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\List\demo1.js
@@ -11,7 +11,6 @@ class LinkedList {
   constructor() {
     this.count = 0;
     this.head = undefined;
-    // this.equalsFn = equalsFn;
   }
 
   append(element) {
@@ -36,7 +35,6 @@ class LinkedList {
       if (position === 0) {
         node.next = this.head;
         this.head = node;
-        // return true;
       } else  {
         let current = this.head;
         let index = 0;
@@ -77,11 +75,14 @@ class Node {
     this.next = undefined;
   }
 }
-
+module.exports = {
+  LinkedList
+}
 let list = new LinkedList();
 list.append(1);
 list.append(2);
 list.append(4);
-list.insert(3, 1);
+list.insert(3, 2);
+1324;
 // console.log(list.getElementAt(2));
 console.log(JSON.stringify(list), '------------->');

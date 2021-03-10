@@ -52,6 +52,12 @@
       "request": "launch",
       "name": "Launch divide",
       "program": "${workspaceFolder}/algorithm\\divide\\demo1.js"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch mergeTwoLists",
+      "program": "${workspaceFolder}/algorithm\\mergeTwoLists\\demo1.js"
+    },
   ]
 }
