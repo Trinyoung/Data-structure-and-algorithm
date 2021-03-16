@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-09 15:09:48
- * @LastEditTime: 2021-03-10 17:12:11
+ * @LastEditTime: 2021-03-10 17:38:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\mergeTwoLists\demo1.js
@@ -16,7 +16,9 @@ var mergeTwoLists = function (l1, l2) {
         this.next = (next === undefined ? null : next)
     }
     while (current2 && current1) {
-        
+        if (current2.element > current1.element) {
+            previous.next = new Node(current1.element);
+        }
     }
     return previous.next;
 };
