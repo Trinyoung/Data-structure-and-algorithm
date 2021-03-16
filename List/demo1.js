@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-09 15:11:02
- * @LastEditTime: 2021-03-10 16:10:36
+ * @LastEditTime: 2021-03-16 13:45:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\List\demo1.js
@@ -85,4 +85,4 @@ list.append(4);
 list.insert(3, 2);
 1324;
 // console.log(list.getElementAt(2));
-console.log(JSON.stringify(list), '------------->');
+// console.log(JSON.stringify(list), '------------->');
