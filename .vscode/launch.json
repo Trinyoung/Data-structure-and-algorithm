@@ -27,7 +27,43 @@
       "type": "node",
       "request": "launch",
       "name": "Launch isInterleave",
-      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo3.js"
+      "program": "${workspaceFolder}/algorithm\\isInterleave\\demo7.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch matrix",
+      "program": "${workspaceFolder}/algorithm\\matrix.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch combinationSum2",
+      "program": "${workspaceFolder}/algorithm\\combinationSum2\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch longestPalindrome",
+      "program": "${workspaceFolder}/algorithm\\longestPalindrome\\demo2.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch divide",
+      "program": "${workspaceFolder}/algorithm\\divide\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch mergeTwoLists",
+      "program": "${workspaceFolder}/algorithm\\mergeTwoLists\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch mergeKList",
+      "program": "${workspaceFolder}/algorithm\\mergeKLists\\demo1.js"
     }
   ]
 }
