@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-12-24 14:21:29
- * @LastEditTime: 2020-12-24 18:43:13
+ * @LastEditTime: 2021-03-26 08:48:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\tree\index.js
  */
-class BinarySearchTree {
+export class BinarySearchTree {
     constructor(arr) {
         this.root = null;
         if (arr && arr.length > 0) {
