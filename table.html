@@ -1,0 +1,118 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-26 08:50:39
+ * @LastEditTime: 2021-03-26 09:43:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Data-structure-and-algorithm\table.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border: 1px solid green;
+        }
+        #head {
+            background-color: lemonchiffon;
+            height: 50px;
+        }
+        td, th {
+            padding: 20px;
+            border-left: 1px solid gray;
+            border-top: 1px solid gray;
+            /* border-left: 1px solid gray; */
+        }
+    </style>
+</head>
+<body>
+    <table class="table"  cellspacing=0 >
+        <thead>
+            <tr id="head">
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script>
+        const heads = ['序号', '归属处室', 'GITlab开发成员', '3月23日提交次数', '代码量统计'];
+        let headStr = '';
+        heads.forEach(item => {
+            headStr +=  `<th>${item}</th>`
+        });
+        const projects = [{
+            project: 'project1',
+            belong: '运维开发处',
+            members: [{
+                name: '张三',
+                times: 1,
+                lines: '125行'
+            }, {
+                name: '李四',
+                times: 2,
+                lines: '行'
+            }]
+        }, {
+            project: 'project2',
+            belong: '管理系统开发处',
+            members: [{
+                name: '李四',
+                times: 1,
+                lines: '125行'
+            }]
+        },{
+            project: 'project2',
+            belong: '管理系统开发处',
+            members: [{
+                name: '李四',
+                times: 1,
+                lines: '125行'
+            }]
+        }, {
+            project: 'project1',
+            belong: '运维开发处',
+            members: [{
+                name: '张三',
+                times: 1,
+                lines: '125行'
+            }, {
+                name: '李四',
+                times: 2,
+                lines: '行'
+            }]
+        }];
+        let bodyStr = '';
+        projects.forEach((item, index) => {
+            let memberStr = '';
+            let lineStr =  `<tr>
+                                <td rowspan="${item.members.length || 1}">${index + 1}</td>
+                                <td rowspan="${item.members.length || 1}">${item.belong}</td>
+                                <td>${item.members[0] && item.members[0].name || '-'}</td>
+                                <td>${item.members[0] && item.members[0].times || '-'}</td>
+                                <td>${item.members[0] && item.members[0].lines || '-'}</td>
+                            </tr>`
+            for (let i = 1; i< item.members.length; i++) {
+                const member = item.members[i];
+                memberStr +=  `<tr>
+                                    <td>${member.name}</td>
+                                    <td>${member.times}</td>
+                                    <td>${member.lines}</td>
+                                </tr>`;
+                lineStr += memberStr;
+            }
+            bodyStr += lineStr;
+        })
+        const headDom = document.getElementById('head');
+        const bodyDom = document.getElementById('tbody');
+
+        headDom.innerHTML = headStr;
+        console.log(bodyStr)
+        bodyDom.innerHTML = bodyStr;
+    </script>
+    
+</body>
+</html>

@@ -1,28 +1,47 @@
+/*
+ * @Author: your name
+ * @Date: 2021-03-16 13:52:08
+ * @LastEditTime: 2021-04-13 13:04:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Data-structure-and-algorithm\algorithm\longestValidParentheses\demo1.js
+ */
+// 未完成
 var longestValidParentheses = function (s) {
-    if (s.length < 2) {
-        return 0;
-    }
-    let max = 0;
-    let left = '(';
-    let right = ')';
     let leftNum = 0;
-    let rightNum = 0;
+    let nums = 0;
+    let max = 0;
+    let template = 0;
     for (let i = 0; i < s.length; i++) {
-        if (leftNum === 0 && s[i] === right) {
-            leftNum = 0;
-            if (max < rightNum) {
-                max = rightNum;
-            }
-            rightNum = 0;
-            continue;
-        }
-        if (left === s[i]) {
+        if (s[i] === '(') {
             leftNum++;
         } else {
-            rightNum++;
-            leftNum--;
+            if (leftNum > 0) {
+                template++;
+                leftNum--;
+                if (leftNum == 0) {
+                    nums += template;
+                    template = 0;
+                    if (nums > max) {
+                        max = nums;
+                    }
+                }
+            } else {
+                leftNum = 0;
+                nums = 0;
+                template = 0;
+            }
         }
+    }
+    // console.log(template, max, leftNum, '-----------')
+    if (template > max) {
+        max = template;
     }
     return max * 2;
 };
-console.log(longestValidParentheses('((((((()))(()()()()'));
+// 
+// console.log(longestValidParentheses('()(()'));
+// console.log(longestValidParentheses('(()()'));
+console.log(longestValidParentheses("(()(((()"));
+// console.log(longestValidParentheses('(()()(()((()()()()()((()()())(()'));
+>>>>>>> af3018d88e12082568ddd0bc15474774214e702d

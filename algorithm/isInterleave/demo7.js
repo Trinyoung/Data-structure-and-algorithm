@@ -3,7 +3,6 @@ var isInterleave = function (s1, s2, s3) {
     if (s3.length !== s1.length + s2.length) {
         return false;
     }
-
     const result = [];
     for (let i = 0; i <= s1.length; i++) {
         for (let j = 0; j <= s2.length; j++) {
