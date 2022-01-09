@@ -44,4 +44,4 @@ var longestValidParentheses = function (s) {
 // console.log(longestValidParentheses('(()()'));
 console.log(longestValidParentheses("(()(((()"));
 // console.log(longestValidParentheses('(()()(()((()()()()()((()()())(()'));
->>>>>>> af3018d88e12082568ddd0bc15474774214e702d
+// >>>>>>> af3018d88e12082568ddd0bc15474774214e702d

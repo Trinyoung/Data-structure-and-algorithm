@@ -11,9 +11,36 @@ var longestValidParentheses = function (s) {
     if (s.length <= 1) {
         return 0;
     }
-    
-    
-    
+    const left = '(';
+    const right = ')';
+    const arr = s.split('');
+    let prev = 0;
+    let next = 1;
+    const marked = {};
+    let max = 0;
+    while (next < arr.length) {
+        if (arr[next] === right && arr[prev] === left) {
+            if (marked[next - 1]) {
+                marked[next] = marked[next - 1] + 2;
+            } else {
+                marked[next] = 2;
+            }
+            if (marked[prev - 1]) {
+                marked[next] += marked[prev - 1];
+                prev -= (marked[prev - 1] + 1);
+            } else {
+                prev--;
+            }
+            if (marked[next] > max) {
+                max = marked[next];
+            }
+            next++;
+        } else {
+            prev = next;
+            next++;
+        }
+    }
+    return max;
 };
 
-console.log(longestValidParentheses("(()(((()"));
+console.log(longestValidParentheses("(())()()))"));
