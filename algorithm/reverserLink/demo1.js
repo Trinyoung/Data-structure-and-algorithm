@@ -8,11 +8,13 @@
  */
 
 function reverserLink(list) {
-
-    let current = list.next;
-    let next = { value: list.value }
-    current.next = next;
-    if (current.next) {
-
+    let prev = null;
+    let curr = list;
+    while (curr) {
+        let next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
     }
+    return prev;
 }

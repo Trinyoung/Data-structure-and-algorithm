@@ -75,6 +75,12 @@
       "request": "launch",
       "name": "Launch longestValidParentheses",
       "program": "${workspaceFolder}/algorithm\\longestValidParentheses\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch quickSort4",
+      "program": "${workspaceFolder}/algorithm/sort/quickSort4.js"
     }
   ]
 }
