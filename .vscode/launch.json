@@ -79,8 +79,8 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch lengthOfLongestSubString",
-      "program": "${workspaceFolder}/algorithm\\lengthOfLongestSubString\\demo1.js"
+      "name": "Launch quickSort4",
+      "program": "${workspaceFolder}/algorithm/sort/quickSort4.js"
     }
   ]
 }

@@ -14,14 +14,14 @@ var longestValidParentheses = function (s) {
     const left = '(';
     const right = ')';
     const arr = s.split('');
-    let prev = 0;
-    let next = 1;
+    let prev = 0; // 索引
+    let next = 1; // next 和 prev 组成一个完整的();
     const marked = {};
     let max = 0;
     while (next < arr.length) {
         if (arr[next] === right && arr[prev] === left) {
             if (marked[next - 1]) {
-                marked[next] = marked[next - 1] + 2;
+                marked[next] = marked[next - 1] + 2; // 到它的时候，最长有效括号长度；
             } else {
                 marked[next] = 2;
             }
@@ -40,6 +40,7 @@ var longestValidParentheses = function (s) {
             next++;
         }
     }
+    console.log(marked, 'marked');
     return max;
 };
 
