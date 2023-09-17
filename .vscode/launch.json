@@ -81,6 +81,12 @@
       "request": "launch",
       "name": "Launch quickSort4",
       "program": "${workspaceFolder}/algorithm/sort/quickSort4.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch simplifyPath",
+      "program": "${workspaceFolder}/algorithm\\simplifyPath\\demo1.js"
     }
   ]
 }
