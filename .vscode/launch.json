@@ -87,6 +87,12 @@
       "request":"launch",
       "name": "Launch simplifyPath",
       "program": "${workspaceFolder}/algorithm\\simplifyPath\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch rob",
+      "program": "${workspaceFolder}/algorithm\\rob\\demo1.js"
     }
   ]
 }
