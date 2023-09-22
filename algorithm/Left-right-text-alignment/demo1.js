@@ -88,5 +88,4 @@ var fullJustify = function (words, maxWidth) {
   return result;
 };
 console.log(fullJustify(["What", "must", "be", "acknowledgment", "shall", "be"], 16));
-console.log(fullJustify(["This", "is", "an", "example", "of", "text", "justification."],
-16))
+console.log(fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16));
