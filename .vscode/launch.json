@@ -84,6 +84,18 @@
     },
     {
       "type": "node",
+      "request": "launch",
+      "name": "Launch findSubString",
+      "program": "${workspaceFolder}/algorithm\\findSubstring\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch canCompleteCircuit",
+      "program": "${workspaceFolder}/algorithm\\canCompleteCircuit\\demo2.js"
+    },
+    {
+      "type": "node",
       "request":"launch",
       "name": "Launch simplifyPath",
       "program": "${workspaceFolder}/algorithm\\simplifyPath\\demo1.js"

@@ -30,8 +30,3 @@ var minWindow = function (s, t) {
         }
     }
 };
-
-'abbdcdbcbd'  'dbdb'
-
-[1, 2, 6, 10]
-[3, 5, 7, 8 9]
