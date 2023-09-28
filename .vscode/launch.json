@@ -93,6 +93,12 @@
       "request":"launch",
       "name": "Launch rob",
       "program": "${workspaceFolder}/algorithm\\rob\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch minCoinChange",
+      "program": "${workspaceFolder}/algorithm\\minCoinChange\\demo3.js"
     }
   ]
 }
