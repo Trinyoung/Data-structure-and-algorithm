@@ -9,5 +9,7 @@ var swapPairs = function(head) {
     next.next = head;
     return next;
 };
-// 使用另一种方法写出上面的算法
 
+// 作者：LeetCode-Solution
+
+// 给你一个链表，进行整体反转，即头变成了尾，尾变成了头，返回反转后的链表，你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。

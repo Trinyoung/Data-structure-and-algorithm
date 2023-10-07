@@ -7,6 +7,22 @@
  * @FilePath: \Data-structure-and-algorithm\algorithm\reverserLink\demo1.js
  */
 
+<<<<<<< HEAD
+const reverseList = function (head) {
+    if (!head.next || !head) {
+        return null;
+    }
+    let next = head.next;
+    head.next = null;
+    const newHead = reverseList(next);
+    next.next = head;
+    return newHead;
+}
+// 以上算法叫什么名字
+// 1
+
+// 
+=======
 function reverserLink(list) {
     let prev = null;
     let curr = list;
@@ -18,3 +34,4 @@ function reverserLink(list) {
     }
     return prev;
 }
+>>>>>>> 02b4b6492b9e7fcc6d668c3acd9b7345c6d37f41

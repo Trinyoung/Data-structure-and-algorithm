@@ -81,6 +81,36 @@
       "request": "launch",
       "name": "Launch quickSort4",
       "program": "${workspaceFolder}/algorithm/sort/quickSort4.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch findSubString",
+      "program": "${workspaceFolder}/algorithm\\findSubstring\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch canCompleteCircuit",
+      "program": "${workspaceFolder}/algorithm\\canCompleteCircuit\\demo2.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch simplifyPath",
+      "program": "${workspaceFolder}/algorithm\\simplifyPath\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch rob",
+      "program": "${workspaceFolder}/algorithm\\rob\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch minCoinChange",
+      "program": "${workspaceFolder}/algorithm\\minCoinChange\\demo3.js"
     }
   ]
 }
