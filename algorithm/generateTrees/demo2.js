@@ -29,9 +29,6 @@ var generateTrees = function(n) {
               }
           }
       }
-  
       return list
     }
-  
   };
-
