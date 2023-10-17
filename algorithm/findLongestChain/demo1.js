@@ -1,0 +1,3 @@
+var findLongestChain = function(pairs) {
+    
+};
