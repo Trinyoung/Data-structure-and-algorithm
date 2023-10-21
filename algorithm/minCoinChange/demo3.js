@@ -1,38 +1,28 @@
-var coinChange = function (coins, amount) {
-    if (amount === 0) return 0;
-    coins = coins.sort((a, b) => a -b);
-    let min = -1;
-    if (amount < coins[0]) {
-        return -1;
-    }
-    console.log(coins, 'coins====');
-    function interate(i, amount, num) {
-        if (i >=0 && amount >= coins[i]) {
-            const nums = Math.floor(amount / coins[i]);
-            const extra = amount % coins[i];
-            console.log(i, amount, extra, num, 'bbbbb');
-            if (extra === 0) {
-                return num + nums;
-            } else {
-                if (i === 0 ) {
-                    return -1;
-                } else {
-                    return interate(--i, extra, num + nums);
-                }
-            }
+function coinChange(coins, amount) {
+    // 创建一个数组来存储计算的结果
+    let dp = new Array(amount + 1).fill(Infinity);
+    
+    // 设置初始条件
+    dp[0] = 0;
+  
+    // 遍历所有金额
+    for (let i = 1; i <= amount; i++) {
+      // 遍历所有硬币
+      for (let j = 0; j < coins.length; j++) {
+        // 如果当前硬币的面额小于等于当前金额
+        if (coins[j] <= i) {
+          // 更新结果为取当前硬币和之前金额对应硬币数量+1的最小值
+          dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
         }
-        if (i > 0 && amount < coins[i]) {
-            return interate(--i, amount, num);
-        }
-        if (i === 0 && amount < coins[i]) {
-            return -1;
-        }
+      }
     }
-    for(let i = coins.length -1; i >= 0; i --) {
-        const res = interate(i, amount, 0);
-        console.log(i, res, 'result ======>');
-        min = min === -1? res : Math.min(min, res);
-    }
-    return min;
-};
-console.log(coinChange([186,419,83,408], 6249), '=================>');
+    
+    // 如果最后结果还是无穷大，则说明无法凑出总金额，返回-1
+    return dp[amount] === Infinity ? -1 : dp[amount];
+  }
+  
+  // 测试样例
+  let coins = [1, 2, 5];
+  let amount = 11;
+  let result = coinChange(coins, amount);
+  console.log(result);
