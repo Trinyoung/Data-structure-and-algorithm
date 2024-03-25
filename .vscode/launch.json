@@ -111,6 +111,30 @@
       "request":"launch",
       "name": "Launch minCoinChange",
       "program": "${workspaceFolder}/algorithm\\minCoinChange\\demo3.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch coinChange2",
+      "program": "${workspaceFolder}/algorithm/coinChange2/demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "connect",
+      "program": "${workspaceFolder}/algorithm/connect/demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "spiralOrder",
+      "program": "${workspaceFolder}/algorithm/spiralOrder/demo1.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "generalMatrix",
+      "program": "${workspaceFolder}/algorithm/generateMatrix/demo1.js"
     }
   ]
 }
