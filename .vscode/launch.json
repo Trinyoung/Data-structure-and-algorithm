@@ -111,6 +111,24 @@
       "request":"launch",
       "name": "Launch minCoinChange",
       "program": "${workspaceFolder}/algorithm\\minCoinChange\\demo3.js"
+    },
+    {
+      "type": "node",
+      "request":"launch",
+      "name": "Launch distinctIntergers",
+      "program": "${workspaceFolder}/algorithm\\distinctIntergers\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch trap",
+      "program":  "${workspaceFolder}/algorithm\\trap\\demo2.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch maxAncestorDiff",
+      "program": "${workspaceFolder}/algorithm\\maxAncestorDiff\\demo1.js"
     }
   ]
 }
