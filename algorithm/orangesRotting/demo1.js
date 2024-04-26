@@ -8,14 +8,12 @@ var orangesRotting = function(grid) {
             if (i < grid.length - 1) interate(i + 1, j, length);
             if (i > 0) interate(i - 1, j, length);
             if (j < grid[i].length - 1) interate(i, j + 1, length);
-            if (j > 0) interate(j, j - 1, length);
+            if (j > 0) interate(i, j - 1, length);
         }
     }
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
             if (grid[i][j] === 2) {
-                // gridMap[`${i}-${j}`] = 0;
-                
                 if (i > 0) {
                     interate(i - 1, j, 0);
                 }
