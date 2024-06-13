@@ -1,15 +1,3 @@
-const grid = [
-  [2, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
-  [1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-];
 var orangesRotting = function(grid) {
     const gridMap = {};
     let total = 0;
@@ -46,9 +34,22 @@ var orangesRotting = function(grid) {
             }
         }
     }
-    // console.log(gridMap, '=======<')
-     const arr = Object.values(gridMap) || [];
+    console.log(gridMap, '------->', total)
+    // const rotingNums = Object.values(gridMap).length;
+    const arr = Object.values(gridMap) || [];
     // console.log(rotingNums)
     return arr.length < total ? -1 : arr.length > 0? Math.max(...arr): 0;
 };
-orangesRotting(grid);
+let grid = [
+  [2, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+  [1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+];
+console.log(orangesRotting(grid))
