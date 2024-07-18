@@ -1,44 +1,31 @@
-/*
- * @Author: your name
- * @Date: 2021-02-04 16:11:29
- * @LastEditTime: 2021-02-04 16:55:22
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \Data-structure-and-algorithm\algorithm\reverseKGroup\demo1.js
- */
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @param {number} k
- * @return {ListNode}
- */
-var reverseKGroup = function (head, k) {
-    const arr1 = [];
-    let a = k;
-    while (k >= 0) {
-        arr1.push(head[--k]);
+var reverseList = function (head, tail) {
+    let prev = tail.next;
+    let p = head;
+    while (prev !== tail) {
+      const nex = p.next;
+      p.next = prev;
+      prev = p;
+      p = nex;
     }
-    while (a < head.length) {
-        arr1.push(head[a++]);
+    return [tail, head];
+  };
+  
+  var reverseKGroup = function (head, k) {
+    let dummy = new ListNode(0, head);
+    let pre = dummy;
+    while (head) {
+      let n = k;
+      let tail = pre;
+      while (n--) {
+        tail = tail.next;
+        if (!tail) return dummy.next;
+      }
+      let nex = tail.next;
+      [head, tail] = reverseList(head, tail);
+      pre.next = head;
+      tail.next = nex;
+      pre = tail;
+      head = tail.next;
     }
-    function ListNode(val, next) {
-        this.val = (val === undefined ? 0 : val)
-        this.next = (next === undefined ? null : next)
-    }
-    const node = new ListNode();
-    insertNode(node, arr1);
-    function insertNode(node, val) {
-        if (!node.val) { 
-            node.val = val.splice(0,1)[0];
-            node.next = new ListNode();
-            insertNode(node.next, val)
-        }
-    }
-    return node;
-};
+    return dummy.next;
+  };

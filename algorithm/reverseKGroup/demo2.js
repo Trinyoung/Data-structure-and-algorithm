@@ -1,22 +1,43 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
 var reverseKGroup = function (head, k) {
-    if(!head || !head.next) {
+    if (!head || !head.next) {
         return head;
     }
-    let i = 1;
-    reverse(head, head.next, i, k, head);
-}
-
-var reverse = function (head, current, i, k, origin) {
-    if(!head || !head.next ) {
-        return head;
+    const cur = head;
+    const [newHead, next] = reverse(head, k);
+    console.log(cur.next, 'newHead is bbb', newHead)
+    if (next) {
+        head.next = reverseKGroup(next, k);
     }
-    if (i === k){
-        i = 1;
-        origin.next = current.next;
+    return newHead;
+};
+function reverse(head, k) {
+    if ( k === 1 && head) {
+        return [head, head.next];
     }
-    const next = current.next;
-    current.next = head;
-    i++;
-    return reverse(current, next, i, k);
+    if (!head) {
+        return [head, null, true];
+    }
+    const next = head.next;
+    
+    const [newHead, nextNext, isBreak] = reverse(next, k - 1);
+    if (!isBreak) {
+        head.next = null;
+        next.next = head;
+        return [newHead, nextNext];
+    } else {
+        // head.next = next;
+        return [head, null, isBreak];
+    }
 }
-

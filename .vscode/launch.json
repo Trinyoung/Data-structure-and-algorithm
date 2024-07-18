@@ -160,6 +160,24 @@
       "request": "launch",
       "name": "findOriginalArray",
       "program": "${workspaceFolder}/algorithm\\findOriginalArray\\demo1.js"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "findMaximumElegance",
+      "program": "${workspaceFolder}/algorithm\\findMaximumElegance\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "reverseBetween",
+      "program": "${workspaceFolder}/algorithm\\reverseBetween\\demo3.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "reverseKGroup",
+      "program": "${workspaceFolder}/algorithm\\reverseKGroup\\demo5.js"
+    },
   ]
 }
