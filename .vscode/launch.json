@@ -179,5 +179,17 @@
       "name": "reverseKGroup",
       "program": "${workspaceFolder}/algorithm\\reverseKGroup\\demo5.js"
     },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "partition",
+      "program": "${workspaceFolder}/algorithm\\partition\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "gameOfLife",
+      "program": "${workspaceFolder}/algorithm\\gameOfLife\\demo1.js"
+    },
   ]
 }

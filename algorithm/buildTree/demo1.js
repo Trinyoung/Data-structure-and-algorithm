@@ -1,3 +1,4 @@
+// 中序遍历和后序遍历构建二叉树；
 var buildTree = function(inorder, postorder) {
     const inorderMap = new Map()
     const postorderMap = new Map()
@@ -28,6 +29,6 @@ function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
     this.right = (right===undefined ? null : right)
- }
+}
 
- buildTree([9,3,15,20,7], [9,15,7,20,3])
+buildTree([9,3,15,20,7], [9,15,7,20,3])
