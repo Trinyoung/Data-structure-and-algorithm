@@ -36,3 +36,5 @@ function merge(left, right) {
 const before = new Date().getTime();
 console.log(mergeSortRec([1, 2, 4, 5, 12, 4, 5, 6, 1, 8, 7, 9, 5, 3, 2, 1, 3, 45, 3, 3, 2, 1, 21, 3, 4, 23, 121212, 12, 12, 31112, 4, 1, 1, 4, 56, 6, 2, 5]));
 console.log(new Date().getTime() - before);
+[1, 3, 5, 2, 4, 7, 8, 6]
+// [1, 3][5, 2][4, 7][8, 6] => [1,3] [2, 5] [4, 7] [6, 8]
