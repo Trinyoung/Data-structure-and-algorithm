@@ -8,7 +8,6 @@ function reverseLink(head) {
     cur = next;
   }
   return pre;
-
 }
 let head = {
     value: 1,
