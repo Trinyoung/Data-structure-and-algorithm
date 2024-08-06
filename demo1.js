@@ -20,3 +20,4 @@ function isPowerOfFiveMultiple(num) {
   console.log(isPowerOfFiveMultiple(125)); // true，因为125是5的三次方
   console.log(isPowerOfFiveMultiple(30));  // false，因为30不是5的次方的倍数
   
+  const a = { name: "lqy", age: 18, sex: "male" };

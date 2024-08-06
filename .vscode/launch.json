@@ -5,6 +5,7 @@
   "version": "0.2.0",
   "runtimeExecutable": true,
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
@@ -160,6 +161,13 @@
       "request": "launch",
       "name": "findOriginalArray",
       "program": "${workspaceFolder}/algorithm\\findOriginalArray\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "getGoodIndices",
+      "runtimeExecutable": "node",
+      "program": "${workspaceFolder}/algorithm\\getGoodIndices\\demo1.js"
     }
   ]
 }
