@@ -4,9 +4,9 @@ function generateTrees(n) {
     }
     
     return generateTreesHelper(1, n);
-  }
+}
   
-  function generateTreesHelper(start, end) {
+function generateTreesHelper(start, end) {
     const result = [];
     
     if (start > end) {
