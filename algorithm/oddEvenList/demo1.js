@@ -38,5 +38,3 @@ console.log(JSON.stringify(oddEvenList({
         }
     }
 })))
-// 
-// 1. 他们如果想要胜利的话，会怎么做呢？首先就是政府的支持。

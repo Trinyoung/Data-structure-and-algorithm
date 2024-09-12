@@ -6,26 +6,44 @@
  * @Description: In User Settings Edit
  * @FilePath: \Data-structure-and-algorithm\algorithm\longestPalindrome\index.js
  */
-var longestPalindrome = function(s) {
-    if (s == '') return ''
-	const len = s.length
-	let index = 0, maxL=0, begin=0;
-	while (index < len) {
-		let right = index, left = index;
-		while (s[index + 1] == s[index]) { // 如果下一个 字符和当前字符相同，那么基准点和右指针保持一致。
-			index++;
-			right++;
-		}
-		while (right < len && left >= 0 && s[right] == s[left]) {
-			right++;
-			left--;
-		}
-		right--, left++;
-		if (right - left + 1 > maxL) {
-            maxL = right - left + 1;
-            begin = left;
-		}
-		index++;
-	}
-	return s.substr(begin, maxL);
-};
+
+// Manacher 算法
+function longestPalindrome(s) {
+    // 预处理字符串
+    const T = '#' + s.split('').join('#') + '#';
+    const n = T.length;
+    const P = new Array(n).fill(0);
+    
+    let C = 0, R = 0;
+    let maxLen = 0, centerIndex = 0;
+    
+    for (let i = 1; i < n - 1; i++) {
+        let iMirror = 2 * C - i;
+        
+        if (R > i) {
+            P[i] = Math.min(R - i, P[iMirror]);
+        }
+        
+        // 尝试扩展回文
+        while (i + 1 + P[i] < n && i - 1 - P[i] >= 0 && T[i + 1 + P[i]] === T[i - 1 - P[i]]) {
+            P[i]++;
+        }
+        
+        // 如果回文超出了R，则更新C和R
+        if (i + P[i] > R) {	
+            C = i;
+            R = i + P[i];
+			
+        }
+        
+        // 更新最长回文子串
+        if (P[i] > maxLen) {
+            maxLen = P[i];
+            centerIndex = i;
+        }
+    }
+    
+    // 从处理后的字符串中提取原始回文子串
+    const start = Math.floor((centerIndex - maxLen) / 2);
+    return s.substring(start, start + maxLen);
+}
