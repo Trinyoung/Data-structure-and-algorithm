@@ -12,9 +12,11 @@ function longestPalindrome(s) {
     // 预处理字符串
     const T = '#' + s.split('').join('#') + '#';
     const n = T.length;
-    const P = new Array(n).fill(0);
+    const P = new Array(n).fill(0); // P[i]表示以索引i为中心的最长回文子串的半径, 不包括中心。
     
-    let C = 0, R = 0;
+    let C = 0, R = 0; 
+    // C代表当前已知的最长回文子串中心位置
+    // R代表当前已知最长回文子串的右边界
     let maxLen = 0, centerIndex = 0;
     
     for (let i = 1; i < n - 1; i++) {
@@ -47,3 +49,4 @@ function longestPalindrome(s) {
     const start = Math.floor((centerIndex - maxLen) / 2);
     return s.substring(start, start + maxLen);
 }
+longestPalindrome("babcbabcbaccba")
