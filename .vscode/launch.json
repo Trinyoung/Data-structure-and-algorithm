@@ -8,6 +8,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "solve",
+      "program": "${workspaceFolder}/algorithm\\solve\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "letterCombination",
       "program": "${workspaceFolder}/algorithm\\letterCombination\\demo1.js"
     },
@@ -191,5 +197,23 @@
       "name": "gameOfLife",
       "program": "${workspaceFolder}/algorithm\\gameOfLife\\demo1.js"
     },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "getGoodIndices",
+      "program": "${workspaceFolder}/algorithm\\getGoodIndices\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "distinctNames",
+      "program": "${workspaceFolder}/algorithm\\distinctName\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "takeCharacters",
+      "program": "${workspaceFolder}/algorithm\\takeCharacters\\demo1.js"
+    }
   ]
 }
