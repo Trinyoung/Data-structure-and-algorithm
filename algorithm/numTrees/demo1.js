@@ -1,31 +1,8 @@
 var numTrees = function(n) {
-    if (n === 1) return 1;
-    let result = 0;
-    let arr = new Array(n).fill(0);
-    arr = arr.map((_, i) => {
-        return i + 1;
-    } );
-    function interate(list) {
-        console.log(list);
-        // if (list.length > 0) {
-        for (let i = 0; i < list.length; i++) {
-            const left = list.slice(0, i); // i是索引
-            const right = list.slice(i + 1);
-            console.log(left, right, 'left, right');
-            if (left.length === 1 || right.length === 1) {
-                result++;
-            }
-            if (left.length > 1) {
-                interate(left);
-            }
-            if (right.length > 1) {
-                interate(right);
-            }
-        }
+    let C = 1;
+    for (let i = 0; i < n; ++i) {
+        C = C * 2 * (2 * i + 1) / (i + 2);
     }
-    
-    interate(arr);
-    
-    return result;
+    return C;
 };
-console.log(numTrees(4));
+// 这个社会只有他们的资本维持特权阶层，还有一个就是通过暴力手段来维持特权阶层。

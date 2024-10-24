@@ -3,8 +3,9 @@
   // 悬停以查看现有属性的描述。
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
-  "runtimeExecutable": true,
+  "runtimeExecutable": "${env:NVM_BIN}/node",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
@@ -57,7 +58,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch longestPalindrome",
-      "program": "${workspaceFolder}/algorithm\\longestPalindrome\\demo2.js"
+      "program": "${workspaceFolder}/algorithm/longestPalindrome/index.js",
     },
     {
       "type": "node",
@@ -170,6 +171,13 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "getGoodIndices",
+      "runtimeExecutable": "${env:NVM_BIN}/node",
+      "program": "${workspaceFolder}/algorithm\\getGoodIndices\\demo1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "findMaximumElegance",
       "program": "${workspaceFolder}/algorithm\\findMaximumElegance\\demo1.js"
     },
@@ -214,6 +222,13 @@
       "request": "launch",
       "name": "takeCharacters",
       "program": "${workspaceFolder}/algorithm\\takeCharacters\\demo1.js"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "takeCharacters",
+      "program": "${workspaceFolder}/algorithm\\takeCharacters\\demo1.js",
+      "runtimeExecutable": "node"
+    },
   ]
 }
